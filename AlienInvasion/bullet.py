@@ -6,7 +6,6 @@ class Bullet(Sprite):
 
     def __init__(self, ai, screen, ship):
         super(Bullet,self).__init__()
-        #super.__init__()
         self.screen = screen
 
         self.rect = pygame.Rect(0,0,ai.bullet_width, ai.bullet_height)
@@ -21,5 +20,4 @@ class Bullet(Sprite):
         self.rect.y = self.y
 
     def draw_bullet(self):
-
         pygame.draw.rect(self.screen, self.color, self.rect)
