@@ -1,13 +1,16 @@
 import pygame
+from pygame.sprite import Sprite
 
 
-class Ship():
+class Ship(Sprite):
+
 
     def __init__(self, ai_settings, screen):
+        super(Ship, self).__init__()
         self.ai_settings = ai_settings
         self.screen = screen
         self.image = pygame.image.load(r'images\ship.bmp')
-        self.rect = self.image.get_rect() # checking field of image (size), get_rect treat object like rectangle
+        self.rect = self.image.get_rect()  # checking field of image (size), get_rect treat object like rectangle
         self.screen_rect = screen.get_rect()
         self.rect.centerx = self.screen_rect.centerx
         self.rect.bottom = self.screen_rect.bottom
